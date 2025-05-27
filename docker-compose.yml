@@ -2,21 +2,16 @@
 
 services:
     backend:
-        container_name: "express_backend"
-        build: ./backend
+        container_name: "express_serwer"
+        build: ./serwer
         ports:
             - "5000:5000"
-    frontend:
-        container_name: "react_frontend"
-        build: ./frontend
-        ports:
-            - "3000:3000"
     baza:
         environment:
             POSTGRES_USER: pawuser
             POSTGRES_PASSWORD: test123
             POSTGRES_DB: pawdb
-        container_name: "postgre_database"
+        container_name: "postgre_database_prod"
         build: ./baza
         ports:
             - "5432:5432"
